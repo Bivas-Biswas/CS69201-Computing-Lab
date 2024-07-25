@@ -99,7 +99,7 @@ void printArray(int A[], int size)
 
 void main()
 {
-    int arr[] = { 1, 0, 5, 4, -4, 3, 1, 1, 0, -3, 2 };
+    int arr[] = { 1, 0, 5, 4, -4, 1, 0, -3, 2 };
     int len = (sizeof(arr) / sizeof(arr[0]));
     mergeSort(arr, 0, len - 1);
     printArray(arr, len);
@@ -138,4 +138,25 @@ void main()
    }
 
    printf("%d\n", maxProd);
+
+
+   // generalized solution
+   int prod = 1;
+
+   int i = len - k, j = len - 1;
+
+   while(i < len){
+    int currProd = 1;
+    for(int m = 0; m < k; m++){
+        int p = (i + m) % len;
+        currProd *= arr[p];
+    }
+    if(currProd > prod){
+        prod = currProd;
+    }
+    i++;
+    j = (j + 1) % len;
+   }
+
+   printf("gen :%d", prod);
 }
