@@ -14,6 +14,19 @@ void insertion(int arr[], int n)
     }
 }
 
+void insertionSort(int arr[], int left, int right) 
+{ 
+    for (int i = left + 1; i <= right; i++) { 
+        int temp = arr[i]; 
+        int j = i - 1; 
+        while (j >= left && arr[j] > temp) { 
+            arr[j + 1] = arr[j]; 
+            j--; 
+        } 
+        arr[j + 1] = temp; 
+    } 
+} 
+
 void main()
 {
     int arr[] = {4, 5, 1, 3, 2, 8};
