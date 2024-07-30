@@ -97,7 +97,7 @@ void timSort(int arr[], int n)
         for(int low = 0; low < n; low += size * 2){
 
             int mid = low + size - 1;
-            int high = min((low + 2 * size - 1), (n - 2));
+            int high = min((low + 2 * size - 1), (n - 1));
 
             if(mid < high){
                 merge(arr, low, mid, high);
